@@ -5,7 +5,6 @@ import net.fabricmc.fabric.api.loot.v3.LootTableSource;
 import net.minecraft.component.DataComponentTypes;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.passive.FrogVariant;
-import net.minecraft.entity.passive.FrogVariants;
 import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.Items;
 import net.minecraft.loot.LootPool;
@@ -17,9 +16,9 @@ import net.minecraft.loot.provider.number.ConstantLootNumberProvider;
 import net.minecraft.predicate.ComponentPredicate;
 import net.minecraft.predicate.entity.DamageSourcePredicate;
 import net.minecraft.predicate.entity.EntityPredicate;
-import net.minecraft.registry.RegistryKey;
-import net.minecraft.registry.RegistryKeys;
-import net.minecraft.registry.RegistryWrapper;
+import net.minecraft.predicate.entity.EntitySubPredicateTypes;
+import net.minecraft.registry.*;
+import net.minecraft.registry.entry.RegistryEntry;
 import overcooked_orange.frogged.registry.ModBlocks;
 import overcooked_orange.frogged.registry.ModFrogs;
 
@@ -32,7 +31,7 @@ public class FrogEatingLootTableHandler implements LootTableEvents.Modify {
         }
     }
 
-    private static void froglight(ItemConvertible item, RegistryKey<FrogVariant> variant, LootTable.Builder builder, RegistryWrapper.WrapperLookup wrapperLookup) {
+    private static void froglight(ItemConvertible item, RegistryEntry<FrogVariant> variant, LootTable.Builder builder, RegistryWrapper.WrapperLookup wrapperLookup) {
         LootPool.Builder pool = LootPool.builder()
                 .with(
                         ItemEntry.builder(item)
@@ -42,10 +41,7 @@ public class FrogEatingLootTableHandler implements LootTableEvents.Modify {
                                                 .sourceEntity(
                                                         EntityPredicate.Builder.create()
                                                                 .type(wrapperLookup.getOrThrow(RegistryKeys.ENTITY_TYPE), EntityType.FROG)
-                                                                .components(ComponentPredicate.of(
-                                                                        DataComponentTypes.FROG_VARIANT,
-                                                                        wrapperLookup.getOrThrow(RegistryKeys.FROG_VARIANT).getOrThrow(variant))
-                                                                )
+                                                                .typeSpecific(EntitySubPredicateTypes.frogVariant(variant))
                                                 )
                                 ))
                 );

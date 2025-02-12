@@ -20,7 +20,6 @@ public class FroggedDataGenerator implements DataGeneratorEntrypoint {
     public void onInitializeDataGenerator(FabricDataGenerator fabricDataGenerator) {
         FabricDataGenerator.Pack generator = fabricDataGenerator.createPack();
 
-        generator.addProvider(ModFrogs::new);
         generator.addProvider(ModFrogTags::new);
         generator.addProvider(FroggedModelProvider::new);
 
@@ -34,6 +33,5 @@ public class FroggedDataGenerator implements DataGeneratorEntrypoint {
 
     @Override
     public void buildRegistry(RegistryBuilder registryBuilder) {
-        registryBuilder.addRegistry(RegistryKeys.FROG_VARIANT, ModFrogs::generate);
     }
 }

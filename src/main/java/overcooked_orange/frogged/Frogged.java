@@ -14,6 +14,7 @@ import org.slf4j.LoggerFactory;
 import overcooked_orange.frogged.frog.FrogEatingLootTableHandler;
 import overcooked_orange.frogged.frog.VenomousFrogAttackHandler;
 import overcooked_orange.frogged.registry.ModBlocks;
+import overcooked_orange.frogged.registry.ModFrogs;
 import overcooked_orange.frogged.registry.ModItems;
 
 public class Frogged implements ModInitializer {
@@ -22,6 +23,7 @@ public class Frogged implements ModInitializer {
 
     @Override
     public void onInitialize() {
+        ModFrogs.registerFrogs();
         ModItems.registerItems();
         ModBlocks.registerBlocks();
 

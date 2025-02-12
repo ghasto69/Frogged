@@ -4,7 +4,8 @@
   "compatibilityLevel": "JAVA_21",
   "mixins": [
     "FrogAttackablesSensorMixin",
-    "FrogEatEntityTaskMixin"
+    "FrogEatEntityTaskMixin",
+    "FrogEntityMixin"
   ],
   "injectors": {
     "defaultRequire": 1

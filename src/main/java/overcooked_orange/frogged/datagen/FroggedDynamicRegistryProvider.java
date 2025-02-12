@@ -8,10 +8,10 @@ import net.minecraft.registry.RegistryWrapper;
 import org.jetbrains.annotations.NotNull;
 import java.util.concurrent.CompletableFuture;
 
-public abstract class FroglightDynamicRegistryProvider<T> extends FabricDynamicRegistryProvider {
+public abstract class FroggedDynamicRegistryProvider<T> extends FabricDynamicRegistryProvider {
     private final RegistryKey<Registry<T>> registry;
 
-    public FroglightDynamicRegistryProvider(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture, RegistryKey<Registry<T>> registry) {
+    public FroggedDynamicRegistryProvider(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture, RegistryKey<Registry<T>> registry) {
         super(output, registriesFuture);
         this.registry = registry;
     }

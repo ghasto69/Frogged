@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "package": "overcooked_orange.frogged.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "FrogAttackablesSensorMixin",
+    "FrogEatEntityTaskMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+	}
+}

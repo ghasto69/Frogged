@@ -1,0 +1,30 @@
+{
+	"schemaVersion": 1,
+	"id": "frogged",
+	"version": "${version}",
+	"name": "Frogged",
+	"description": "More frog variants and froglights Minecraft!",
+	"authors": [
+		"OvercookedOrange"
+	],
+	"license": "CC0-1.0",
+	"icon": "assets/frogged/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"overcooked_orange.frogged.Frogged"
+		],
+		"fabric-datagen": [
+			"overcooked_orange.frogged.FroggedDataGenerator"
+		]
+	},
+	"mixins": [
+		"frogged.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.16.10",
+		"minecraft": ">=1.21.5-alpha.25.6.a",
+		"java": ">=21",
+		"fabric-api": "*"
+	}
+}

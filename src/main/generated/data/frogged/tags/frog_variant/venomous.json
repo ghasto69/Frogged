@@ -1,6 +1,12 @@
 {
   "values": [
-    "frogged:golden_poison_dart_frog",
-    "frogged:blue_poison_dart_frog"
+    {
+      "id": "frogged:golden_poison_dart_frog",
+      "required": false
+    },
+    {
+      "id": "frogged:blue_poison_dart_frog",
+      "required": false
+    }
   ]
 }

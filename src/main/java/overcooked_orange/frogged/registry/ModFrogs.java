@@ -18,18 +18,19 @@ public class ModFrogs extends FroggedDynamicRegistryProvider<FrogVariant> {
         super(output, registriesFuture, RegistryKeys.FROG_VARIANT);
     }
 
-    public static final RegistryKey<FrogVariant> GOLDEN_POISON_DART_FROG = RegistryKey.of(RegistryKeys.FROG_VARIANT, Frogged.id("golden_poison_dart_frog"));
-    public static final RegistryKey<FrogVariant> BLUE_POISON_DART_FROG = RegistryKey.of(RegistryKeys.FROG_VARIANT, Frogged.id("blue_poison_dart_frog"));
+    public static final RegistryKey<FrogVariant> GOLDEN_POISON_DART_FROG = key("golden_poison_dart_frog", RegistryKeys.FROG_VARIANT);
+    public static final RegistryKey<FrogVariant> BLUE_POISON_DART_FROG = key("blue_poison_dart_frog", RegistryKeys.FROG_VARIANT);
 
-    public static void generate(Registerable<FrogVariant> context) {
-        RegistryEntryLookup<Biome> biomes = context.getRegistryLookup(RegistryKeys.BIOME);
+    @Override
+    protected void configure(RegistryWrapper.WrapperLookup wrapperLookup, Entries registry) {
+        RegistryEntryLookup<Biome> biomes = wrapperLookup.getOrThrow(RegistryKeys.BIOME);
 
-        context.register(GOLDEN_POISON_DART_FROG, frog(GOLDEN_POISON_DART_FROG, SpawnConditionSelectors.createSingle(
+        registry.add(GOLDEN_POISON_DART_FROG, frog(GOLDEN_POISON_DART_FROG, SpawnConditionSelectors.createSingle(
                 new BiomeSpawnCondition(biomes.getOrThrow(ConventionalBiomeTags.IS_JUNGLE)),
                 1
         )));
 
-        context.register(BLUE_POISON_DART_FROG, frog(BLUE_POISON_DART_FROG, SpawnConditionSelectors.createSingle(
+        registry.add(BLUE_POISON_DART_FROG, frog(BLUE_POISON_DART_FROG, SpawnConditionSelectors.createSingle(
                 new BiomeSpawnCondition(biomes.getOrThrow(ConventionalBiomeTags.IS_JUNGLE)),
                 1
         )));

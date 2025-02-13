@@ -31,9 +31,4 @@ public class FroggedDataGenerator implements DataGeneratorEntrypoint {
             }
         });
     }
-
-    @Override
-    public void buildRegistry(RegistryBuilder registryBuilder) {
-        registryBuilder.addRegistry(RegistryKeys.FROG_VARIANT, ModFrogs::generate);
-    }
 }

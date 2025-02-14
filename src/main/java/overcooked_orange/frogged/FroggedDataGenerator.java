@@ -24,12 +24,8 @@ public class FroggedDataGenerator implements DataGeneratorEntrypoint {
         generator.addProvider((dataOutput, registriesFuture) -> new FabricLanguageProvider(dataOutput) {
             @Override
             public void generateTranslations(TranslationBuilder translations) {
-                translations.add(ModBlocks.OBSIDIAN_FROGLIGHT, "Obsidian Froglight");
-
-                translations.add(ModFrogTags.VENOMOUS.id().toTranslationKey("tag"), "Venomous Frogs");
-
-                translations.add(Registries.FROG_VARIANT.getId(ModFrogs.GOLDEN_POISON_DART_FROG).toTranslationKey("frog_variant"), "Golden Poison Frog");
-                translations.add(Registries.FROG_VARIANT.getId(ModFrogs.BLUE_POISON_DART_FROG).toTranslationKey("frog_variant"), "Blue Poison Frog");
+                translations.add(ModBlocks.COBALT_FROGLIGHT, "Cobalt Froglight");
+                translations.add(ModBlocks.SAFFRON_FROGLIGHT, "Saffron Froglight");
             }
         });
     }

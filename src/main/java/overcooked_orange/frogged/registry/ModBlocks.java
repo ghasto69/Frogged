@@ -19,11 +19,23 @@ import java.util.function.BiFunction;
 import java.util.function.Function;
 
 public class ModBlocks {
-    public static final Block OBSIDIAN_FROGLIGHT = block(
-            "obsidian_froglight",
+    public static final Block COBALT_FROGLIGHT = block(
+            "cobalt_froglight",
             PillarBlock::new,
             AbstractBlock.Settings.create()
-                    .mapColor(MapColor.DEEPSLATE_GRAY)
+                    .mapColor(MapColor.LAPIS_BLUE)
+                    .strength(0.3F)
+                    .luminance(blockState -> 15)
+                    .sounds(BlockSoundGroup.FROGLIGHT),
+            BlockItem::new,
+            new Item.Settings()
+    );
+
+    public static final Block SAFFRON_FROGLIGHT = block(
+            "saffron_froglight",
+            PillarBlock::new,
+            AbstractBlock.Settings.create()
+                    .mapColor(MapColor.TERRACOTTA_YELLOW)
                     .strength(0.3F)
                     .luminance(blockState -> 15)
                     .sounds(BlockSoundGroup.FROGLIGHT),
@@ -44,6 +56,9 @@ public class ModBlocks {
     }
 
     private static void addFroglight(FabricItemGroupEntries entries) {
-        entries.addAfter(Items.PEARLESCENT_FROGLIGHT, ModBlocks.OBSIDIAN_FROGLIGHT);
+        entries.addAfter(Items.PEARLESCENT_FROGLIGHT,
+                COBALT_FROGLIGHT,
+                SAFFRON_FROGLIGHT
+        );
     }
 }

@@ -14,7 +14,8 @@ public class FroggedModelProvider extends FabricModelProvider {
 
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator generator) {
-        generator.registerAxisRotated(ModBlocks.OBSIDIAN_FROGLIGHT, TexturedModel.CUBE_COLUMN, TexturedModel.CUBE_COLUMN_HORIZONTAL);
+        generator.registerAxisRotated(ModBlocks.COBALT_FROGLIGHT, TexturedModel.CUBE_COLUMN, TexturedModel.CUBE_COLUMN_HORIZONTAL);
+        generator.registerAxisRotated(ModBlocks.SAFFRON_FROGLIGHT, TexturedModel.CUBE_COLUMN, TexturedModel.CUBE_COLUMN_HORIZONTAL);
     }
 
     @Override

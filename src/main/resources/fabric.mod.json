@@ -5,9 +5,10 @@
 	"name": "Frogged",
 	"description": "More frog variants and froglights Minecraft!",
 	"authors": [
-		"OvercookedOrange"
+		"OvercookedOrange",
+		"Startraveler"
 	],
-	"license": "CC0-1.0",
+	"license": "MIT",
 	"icon": "assets/frogged/icon.png",
 	"environment": "*",
 	"entrypoints": {

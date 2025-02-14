@@ -6,8 +6,6 @@ import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryWrapper;
 import org.jetbrains.annotations.NotNull;
-import overcooked_orange.frogged.Frogged;
-
 import java.util.concurrent.CompletableFuture;
 
 public abstract class FroggedDynamicRegistryProvider<T> extends FabricDynamicRegistryProvider {
@@ -16,10 +14,6 @@ public abstract class FroggedDynamicRegistryProvider<T> extends FabricDynamicReg
     public FroggedDynamicRegistryProvider(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture, RegistryKey<Registry<T>> registry) {
         super(output, registriesFuture);
         this.registry = registry;
-    }
-
-    public static <T> RegistryKey<T> key(String id, RegistryKey<Registry<T>> registry) {
-        return RegistryKey.of(registry, Frogged.id(id));
     }
 
     @Override

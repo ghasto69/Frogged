@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "frogged:block/saffron_froglight_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "frogged:block/saffron_froglight"
+    },
+    "axis=z": {
+      "model": "frogged:block/saffron_froglight_horizontal",
+      "x": 90
+    }
+  }
+}

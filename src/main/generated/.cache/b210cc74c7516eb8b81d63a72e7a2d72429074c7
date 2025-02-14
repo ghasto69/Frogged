@@ -1,5 +1,9 @@
-// 25w06a	-999999999-01-01T00:00:00	Frogged/Model Definitions
-c338ca4a8e6380533542ba5846d3b94ed878affb assets/frogged/blockstates/obsidian_froglight.json
-def81833010ecc8d9adf0ec495480a0b1dc9fb92 assets/frogged/items/obsidian_froglight.json
-ee08f60e887c3883a6a6894f8ae4583d9b27b1e0 assets/frogged/models/block/obsidian_froglight.json
-776a4cf34e549f9664c7cba077eb1d6b8a03a748 assets/frogged/models/block/obsidian_froglight_horizontal.json
+// 1.20.1	2025-02-14T20:52:47.923473	Frogged/Model Definitions
+45ff7f3210609f819bb850150d8f28a7762f673b assets/frogged/models/block/cobalt_froglight.json
+8fe6f694c8912f3a911ef0e8c3bb2aae2ec51892 assets/frogged/models/item/saffron_froglight.json
+0d86214b07fce0f3d2f9eae127c6db439d9706af assets/frogged/models/block/cobalt_froglight_horizontal.json
+5ceac562faa0d31ceb30c2ca65410871fe28a99c assets/frogged/blockstates/saffron_froglight.json
+75ae3d322772d03801cc913d7e74fa4c94896637 assets/frogged/models/block/saffron_froglight_horizontal.json
+e0f96e503386e77d86df344e59b80f3e42c43237 assets/frogged/models/block/saffron_froglight.json
+a18364185d8c08e781ef63c8bd7b2c97bd360272 assets/frogged/models/item/cobalt_froglight.json
+d9c0187376795379ab73f27fab1ea3fa5d0c271a assets/frogged/blockstates/cobalt_froglight.json

@@ -38,8 +38,8 @@ public class ModBlocks {
 
     private static Block block(String name, Function<AbstractBlock.Settings, Block> blockFunction, AbstractBlock.Settings blockSettings, BiFunction<Block, Item.Settings, Item> itemFunction, Item.Settings itemSettings) {
         Identifier id = Frogged.id(name);
-        Block block = Registry.register(Registries.BLOCK, id, blockFunction.apply(blockSettings.registryKey(RegistryKey.of(RegistryKeys.BLOCK, id))));
-        Registry.register(Registries.ITEM, id, itemFunction.apply(block, itemSettings.registryKey(RegistryKey.of(RegistryKeys.ITEM, id))));
+        Block block = Registry.register(Registries.BLOCK, id, blockFunction.apply(blockSettings));
+        Registry.register(Registries.ITEM, id, itemFunction.apply(block, itemSettings));
         return block;
     }
 

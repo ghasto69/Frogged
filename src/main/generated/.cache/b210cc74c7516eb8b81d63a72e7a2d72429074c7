@@ -1,5 +1,5 @@
-// 1.21.4	-999999999-01-01T00:00:00	Frogged/Model Definitions
-c338ca4a8e6380533542ba5846d3b94ed878affb assets/frogged/blockstates/obsidian_froglight.json
-def81833010ecc8d9adf0ec495480a0b1dc9fb92 assets/frogged/items/obsidian_froglight.json
-ee08f60e887c3883a6a6894f8ae4583d9b27b1e0 assets/frogged/models/block/obsidian_froglight.json
+// 1.20.1	2025-02-14T14:09:54.902987	Frogged/Model Definitions
 776a4cf34e549f9664c7cba077eb1d6b8a03a748 assets/frogged/models/block/obsidian_froglight_horizontal.json
+c338ca4a8e6380533542ba5846d3b94ed878affb assets/frogged/blockstates/obsidian_froglight.json
+ee08f60e887c3883a6a6894f8ae4583d9b27b1e0 assets/frogged/models/block/obsidian_froglight.json
+2c9f273be6a712e1893d7c195ba474b30eaeefb2 assets/frogged/models/item/obsidian_froglight.json

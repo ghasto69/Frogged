@@ -1,12 +1,10 @@
 package overcooked_orange.frogged;
 
-import net.fabricmc.fabric.api.client.datagen.v1.provider.FabricModelProvider;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
-import net.minecraft.client.data.BlockStateModelGenerator;
-import net.minecraft.client.data.ItemModelGenerator;
-import net.minecraft.client.data.TexturedModel;
+import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.registry.Registries;
 import net.minecraft.registry.RegistryBuilder;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.RegistryWrapper;
@@ -23,10 +21,15 @@ public class FroggedDataGenerator implements DataGeneratorEntrypoint {
         generator.addProvider(ModFrogTags::new);
         generator.addProvider(FroggedModelProvider::new);
 
-        generator.addProvider((dataOutput, registriesFuture) -> new FabricLanguageProvider(dataOutput, registriesFuture) {
+        generator.addProvider((dataOutput, registriesFuture) -> new FabricLanguageProvider(dataOutput) {
             @Override
-            public void generateTranslations(RegistryWrapper.WrapperLookup provider, TranslationBuilder translations) {
+            public void generateTranslations(TranslationBuilder translations) {
                 translations.add(ModBlocks.OBSIDIAN_FROGLIGHT, "Obsidian Froglight");
+
+                translations.add(ModFrogTags.VENOMOUS.id().toTranslationKey("tag"), "Venomous Frogs");
+
+                translations.add(Registries.FROG_VARIANT.getId(ModFrogs.GOLDEN_POISON_DART_FROG).toTranslationKey("frog_variant"), "Golden Poison Frog");
+                translations.add(Registries.FROG_VARIANT.getId(ModFrogs.BLUE_POISON_DART_FROG).toTranslationKey("frog_variant"), "Blue Poison Frog");
             }
         });
     }

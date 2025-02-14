@@ -1,3 +1,6 @@
 {
-  "block.frogged.obsidian_froglight": "Obsidian Froglight"
+  "block.frogged.obsidian_froglight": "Obsidian Froglight",
+  "frog_variant.frogged.blue_poison_dart_frog": "Blue Poison Frog",
+  "frog_variant.frogged.golden_poison_dart_frog": "Golden Poison Frog",
+  "tag.frogged.venomous": "Venomous Frogs"
 }

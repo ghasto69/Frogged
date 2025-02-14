@@ -17,11 +17,6 @@ public abstract class FroggedDynamicRegistryProvider<T> extends FabricDynamicReg
     }
 
     @Override
-    protected void configure(RegistryWrapper.WrapperLookup provider, Entries entries) {
-        entries.addAll(provider.getOrThrow(this.registry));
-    }
-
-    @Override
     public @NotNull String getName() {
         return "Dynamic Registry: " + this.registry.getValue().getPath();
     }

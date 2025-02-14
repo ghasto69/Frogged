@@ -6,6 +6,8 @@ import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.passive.FrogEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
@@ -18,7 +20,7 @@ public class VenomousFrogAttackHandler implements AttackEntityCallback {
     @Override
     public ActionResult interact(PlayerEntity player, World world, Hand hand, Entity entity, @Nullable EntityHitResult entityHitResult) {
         if(world instanceof ServerWorld && entity instanceof FrogEntity frog) {
-            if(frog.getVariant().isIn(ModFrogTags.VENOMOUS)) {
+            if(Registries.FROG_VARIANT.getEntry(frog.getVariant()).isIn(ModFrogTags.VENOMOUS)) {
                 player.addStatusEffect(new StatusEffectInstance(StatusEffects.POISON, 300));
             }
         }

@@ -11,6 +11,7 @@ import net.minecraft.entity.SpawnGroup;
 import net.minecraft.util.Identifier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import overcooked_orange.frogged.datagen.ModBiomeTags;
 import overcooked_orange.frogged.frog.FrogEatingLootTableHandler;
 import overcooked_orange.frogged.frog.VenomousFrogAttackHandler;
 import overcooked_orange.frogged.registry.ModBlocks;
@@ -28,12 +29,21 @@ public class Frogged implements ModInitializer {
         ModBlocks.registerBlocks();
 
         BiomeModifications.addSpawn(
-                context -> context.hasTag(ConventionalBiomeTags.JUNGLE),
+                context -> context.hasTag(ModBiomeTags.SPAWNS_POISON_DART_FROGS),
                 SpawnGroup.CREATURE,
                 EntityType.FROG,
                 8,
-                2,
-                5
+                3,
+                4
+        );
+
+        BiomeModifications.addSpawn(
+                context -> context.hasTag(ModBiomeTags.SPAWNS_SANDY_FROGS),
+                SpawnGroup.CREATURE,
+                EntityType.FROG,
+                5,
+                3,
+                4
         );
 
         AttackEntityCallback.EVENT.register(new VenomousFrogAttackHandler());

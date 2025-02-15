@@ -56,7 +56,8 @@ public class ModBlocks {
     }
 
     private static void addFroglight(FabricItemGroupEntries entries) {
-        entries.addAfter(Items.PEARLESCENT_FROGLIGHT,
+        entries.addAfter(
+                Items.PEARLESCENT_FROGLIGHT,
                 COBALT_FROGLIGHT,
                 SAFFRON_FROGLIGHT
         );

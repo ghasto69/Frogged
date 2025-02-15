@@ -19,7 +19,10 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.ModifyArg;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
+import overcooked_orange.frogged.datagen.ModBiomeTags;
 import overcooked_orange.frogged.registry.ModFrogs;
+
+import java.util.random.RandomGenerator;
 
 @Mixin(FrogEntity.class)
 public abstract class FrogEntityMixin extends AnimalEntity {
@@ -35,8 +38,11 @@ public abstract class FrogEntityMixin extends AnimalEntity {
     )
     private void variant(ServerWorldAccess world, LocalDifficulty difficulty, SpawnReason spawnReason, EntityData entityData, NbtCompound entityNbt, CallbackInfoReturnable<EntityData> cir) {
         RegistryEntry<Biome> biome = world.getBiome(this.getBlockPos());
-        if (biome.isIn(ConventionalBiomeTags.JUNGLE)) {
+        if (biome.isIn(ModBiomeTags.HAS_POISON_DART_FROGS)) {
             this.setVariant(world.getRandom().nextBoolean() ? ModFrogs.GOLDEN_POISON_DART_FROG : ModFrogs.BLUE_POISON_DART_FROG);
+        }
+        if(biome.isIn(ModBiomeTags.HAS_SANDY_FROGS)) {
+            this.setVariant(ModFrogs.SANDY_FROG);
         }
     }
 }

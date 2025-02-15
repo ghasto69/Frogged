@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "#c:desert",
+    "#c:badlands",
+    "#frogged:spawns_sandy_frogs"
+  ]
+}

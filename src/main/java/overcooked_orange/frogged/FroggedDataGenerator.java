@@ -8,7 +8,9 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.RegistryBuilder;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.RegistryWrapper;
+import overcooked_orange.frogged.datagen.FroggedBlockLootTableProvider;
 import overcooked_orange.frogged.datagen.FroggedModelProvider;
+import overcooked_orange.frogged.datagen.ModBiomeTags;
 import overcooked_orange.frogged.datagen.ModFrogTags;
 import overcooked_orange.frogged.registry.ModBlocks;
 import overcooked_orange.frogged.registry.ModFrogs;
@@ -18,7 +20,9 @@ public class FroggedDataGenerator implements DataGeneratorEntrypoint {
     public void onInitializeDataGenerator(FabricDataGenerator fabricDataGenerator) {
         FabricDataGenerator.Pack generator = fabricDataGenerator.createPack();
 
+        generator.addProvider(FroggedBlockLootTableProvider::new);
         generator.addProvider(ModFrogTags::new);
+        generator.addProvider(ModBiomeTags::new);
         generator.addProvider(FroggedModelProvider::new);
 
         generator.addProvider((dataOutput, registriesFuture) -> new FabricLanguageProvider(dataOutput) {

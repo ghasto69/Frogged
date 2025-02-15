@@ -5,8 +5,7 @@
   "mixins": [
     "FrogAttackablesSensorMixin",
     "FrogEatEntityTaskMixin",
-    "FrogEntityMixin",
-    "FrogVariantMixin"
+    "FrogEntityMixin"
   ],
   "injectors": {
     "defaultRequire": 1

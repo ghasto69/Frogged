@@ -5,7 +5,6 @@ import net.fabricmc.fabric.api.loot.v2.LootTableSource;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.passive.FrogVariant;
 import net.minecraft.item.ItemConvertible;
-import net.minecraft.item.Items;
 import net.minecraft.loot.LootManager;
 import net.minecraft.loot.LootPool;
 import net.minecraft.loot.LootTable;
@@ -16,8 +15,6 @@ import net.minecraft.loot.provider.number.ConstantLootNumberProvider;
 import net.minecraft.predicate.entity.DamageSourcePredicate;
 import net.minecraft.predicate.entity.EntityPredicate;
 import net.minecraft.predicate.entity.TypeSpecificPredicate;
-import net.minecraft.registry.*;
-import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.resource.ResourceManager;
 import net.minecraft.util.Identifier;
 import overcooked_orange.frogged.registry.ModBlocks;
@@ -29,6 +26,7 @@ public class FrogEatingLootTableHandler implements LootTableEvents.Modify {
         if (EntityType.MAGMA_CUBE.getLootTableId().equals(identifier)) {
             froglight(ModBlocks.COBALT_FROGLIGHT, ModFrogs.BLUE_POISON_DART_FROG, builder);
             froglight(ModBlocks.SAFFRON_FROGLIGHT, ModFrogs.GOLDEN_POISON_DART_FROG, builder);
+            froglight(ModBlocks.RUSSET_FROGLIGHT, ModFrogs.SANDY_FROG, builder);
         }
     }
 

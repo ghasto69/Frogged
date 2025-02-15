@@ -9,8 +9,6 @@ import net.minecraft.item.ItemGroups;
 import net.minecraft.item.Items;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
-import net.minecraft.registry.RegistryKey;
-import net.minecraft.registry.RegistryKeys;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import overcooked_orange.frogged.Frogged;
@@ -43,6 +41,18 @@ public class ModBlocks {
             new Item.Settings()
     );
 
+    public static final Block RUSSET_FROGLIGHT = block(
+            "russet_froglight",
+            PillarBlock::new,
+            AbstractBlock.Settings.create()
+                    .mapColor(MapColor.TERRACOTTA_ORANGE)
+                    .strength(0.3F)
+                    .luminance(blockState -> 15)
+                    .sounds(BlockSoundGroup.FROGLIGHT),
+            BlockItem::new,
+            new Item.Settings()
+    );
+
     public static void registerBlocks() {
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.NATURAL).register(ModBlocks::addFroglight);
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.FUNCTIONAL).register(ModBlocks::addFroglight);
@@ -59,7 +69,8 @@ public class ModBlocks {
         entries.addAfter(
                 Items.PEARLESCENT_FROGLIGHT,
                 COBALT_FROGLIGHT,
-                SAFFRON_FROGLIGHT
+                SAFFRON_FROGLIGHT,
+                RUSSET_FROGLIGHT
         );
     }
 }

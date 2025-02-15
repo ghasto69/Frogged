@@ -13,5 +13,6 @@ public class FroggedBlockLootTableProvider extends FabricBlockLootTableProvider 
     public void generate() {
         addDrop(ModBlocks.COBALT_FROGLIGHT);
         addDrop(ModBlocks.SAFFRON_FROGLIGHT);
+        addDrop(ModBlocks.RUSSET_FROGLIGHT);
     }
 }

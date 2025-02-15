@@ -1,9 +1,13 @@
-// 1.20.1	2025-02-15T08:39:41.990063	Frogged/Model Definitions
+// 1.20.1	2025-02-15T09:21:46.043184	Frogged/Model Definitions
 45ff7f3210609f819bb850150d8f28a7762f673b assets/frogged/models/block/cobalt_froglight.json
+461014e50c0c406df206a73703bc7b41e08ef7ab assets/frogged/models/item/russet_froglight.json
+0f7cfcf4b67875ba82ed8b6be231f5dbd16368b8 assets/frogged/blockstates/russet_froglight.json
+75ae3d322772d03801cc913d7e74fa4c94896637 assets/frogged/models/block/saffron_froglight_horizontal.json
+a18364185d8c08e781ef63c8bd7b2c97bd360272 assets/frogged/models/item/cobalt_froglight.json
 8fe6f694c8912f3a911ef0e8c3bb2aae2ec51892 assets/frogged/models/item/saffron_froglight.json
 0d86214b07fce0f3d2f9eae127c6db439d9706af assets/frogged/models/block/cobalt_froglight_horizontal.json
+4adc708bf9d77211cbd27454bab9f002eaba1f7b assets/frogged/models/block/russet_froglight.json
 5ceac562faa0d31ceb30c2ca65410871fe28a99c assets/frogged/blockstates/saffron_froglight.json
-75ae3d322772d03801cc913d7e74fa4c94896637 assets/frogged/models/block/saffron_froglight_horizontal.json
 e0f96e503386e77d86df344e59b80f3e42c43237 assets/frogged/models/block/saffron_froglight.json
-a18364185d8c08e781ef63c8bd7b2c97bd360272 assets/frogged/models/item/cobalt_froglight.json
+b3b38fb18f62c7502582fe82f6a745bfb7d196be assets/frogged/models/block/russet_froglight_horizontal.json
 d9c0187376795379ab73f27fab1ea3fa5d0c271a assets/frogged/blockstates/cobalt_froglight.json

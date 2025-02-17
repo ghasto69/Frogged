@@ -1,6 +1,5 @@
 package overcooked_orange.frogged.mixin;
 
-import net.fabricmc.fabric.api.tag.convention.v1.ConventionalBiomeTags;
 import net.minecraft.entity.EntityData;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnReason;
@@ -17,12 +16,9 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.ModifyArg;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import overcooked_orange.frogged.datagen.ModBiomeTags;
 import overcooked_orange.frogged.registry.ModFrogs;
-
-import java.util.random.RandomGenerator;
 
 @Mixin(FrogEntity.class)
 public abstract class FrogEntityMixin extends AnimalEntity {
@@ -39,7 +35,12 @@ public abstract class FrogEntityMixin extends AnimalEntity {
     private void variant(ServerWorldAccess world, LocalDifficulty difficulty, SpawnReason spawnReason, EntityData entityData, NbtCompound entityNbt, CallbackInfoReturnable<EntityData> cir) {
         RegistryEntry<Biome> biome = world.getBiome(this.getBlockPos());
         if (biome.isIn(ModBiomeTags.HAS_POISON_DART_FROGS)) {
-            this.setVariant(world.getRandom().nextBoolean() ? ModFrogs.GOLDEN_POISON_DART_FROG : ModFrogs.BLUE_POISON_DART_FROG);
+            this.setVariant(switch (world.getRandom().nextInt(3)) {
+                case 0 -> ModFrogs.GOLDEN_POISON_DART_FROG;
+                case 1 -> ModFrogs.BLUE_POISON_DART_FROG;
+                case 2 -> ModFrogs.VARIEGATED_POISON_DART_FROG;
+                default -> ModFrogs.GOLDEN_POISON_DART_FROG; //Fallback
+            });
         }
         if(biome.isIn(ModBiomeTags.HAS_SANDY_FROGS)) {
             this.setVariant(ModFrogs.SANDY_FROG);

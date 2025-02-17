@@ -26,6 +26,7 @@ public class FrogEatingLootTableHandler implements LootTableEvents.Modify {
         if (EntityType.MAGMA_CUBE.getLootTableId().equals(identifier)) {
             froglight(ModBlocks.COBALT_FROGLIGHT, ModFrogs.BLUE_POISON_DART_FROG, builder);
             froglight(ModBlocks.SAFFRON_FROGLIGHT, ModFrogs.GOLDEN_POISON_DART_FROG, builder);
+            froglight(ModBlocks.CERULEAN_FROGLIGHT, ModFrogs.VARIEGATED_POISON_DART_FROG, builder);
             froglight(ModBlocks.RUSSET_FROGLIGHT, ModFrogs.SANDY_FROG, builder);
         }
     }

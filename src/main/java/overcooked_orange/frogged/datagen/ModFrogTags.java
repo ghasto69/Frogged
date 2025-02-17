@@ -21,7 +21,8 @@ public class ModFrogTags extends FabricTagProvider<FrogVariant> {
     @Override
     protected void configure(RegistryWrapper.WrapperLookup provider) {
         getOrCreateTagBuilder(VENOMOUS)
+                .add(ModFrogs.BLUE_POISON_DART_FROG)
                 .add(ModFrogs.GOLDEN_POISON_DART_FROG)
-                .add(ModFrogs.BLUE_POISON_DART_FROG);
+                .add(ModFrogs.VARIEGATED_POISON_DART_FROG);
     }
 }

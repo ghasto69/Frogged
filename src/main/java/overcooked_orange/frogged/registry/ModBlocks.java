@@ -2,7 +2,10 @@ package overcooked_orange.frogged.registry;
 
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
-import net.minecraft.block.*;
+import net.minecraft.block.AbstractBlock;
+import net.minecraft.block.Block;
+import net.minecraft.block.MapColor;
+import net.minecraft.block.PillarBlock;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroups;
@@ -13,55 +16,26 @@ import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import overcooked_orange.frogged.Frogged;
 
-import java.util.function.BiFunction;
-import java.util.function.Function;
-
 public class ModBlocks {
-    public static final Block COBALT_FROGLIGHT = block(
-            "cobalt_froglight",
-            PillarBlock::new,
-            AbstractBlock.Settings.create()
-                    .mapColor(MapColor.LAPIS_BLUE)
-                    .strength(0.3F)
-                    .luminance(blockState -> 15)
-                    .sounds(BlockSoundGroup.FROGLIGHT),
-            BlockItem::new,
-            new Item.Settings()
-    );
-
-    public static final Block SAFFRON_FROGLIGHT = block(
-            "saffron_froglight",
-            PillarBlock::new,
-            AbstractBlock.Settings.create()
-                    .mapColor(MapColor.TERRACOTTA_YELLOW)
-                    .strength(0.3F)
-                    .luminance(blockState -> 15)
-                    .sounds(BlockSoundGroup.FROGLIGHT),
-            BlockItem::new,
-            new Item.Settings()
-    );
-
-    public static final Block RUSSET_FROGLIGHT = block(
-            "russet_froglight",
-            PillarBlock::new,
-            AbstractBlock.Settings.create()
-                    .mapColor(MapColor.TERRACOTTA_ORANGE)
-                    .strength(0.3F)
-                    .luminance(blockState -> 15)
-                    .sounds(BlockSoundGroup.FROGLIGHT),
-            BlockItem::new,
-            new Item.Settings()
-    );
+    public static final Block COBALT_FROGLIGHT = froglight("cobalt_froglight", MapColor.LAPIS_BLUE);
+    public static final Block SAFFRON_FROGLIGHT = froglight("saffron_froglight", MapColor.TERRACOTTA_YELLOW);
+    public static final Block RUSSET_FROGLIGHT = froglight("russet_froglight", MapColor.TERRACOTTA_ORANGE);
+    public static final Block CERULEAN_FROGLIGHT = froglight("cerulean_froglight", MapColor.CYAN);
 
     public static void registerBlocks() {
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.NATURAL).register(ModBlocks::addFroglight);
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.FUNCTIONAL).register(ModBlocks::addFroglight);
     }
 
-    private static Block block(String name, Function<AbstractBlock.Settings, Block> blockFunction, AbstractBlock.Settings blockSettings, BiFunction<Block, Item.Settings, Item> itemFunction, Item.Settings itemSettings) {
+    private static Block froglight(String name, MapColor mapColor) {
         Identifier id = Frogged.id(name);
-        Block block = Registry.register(Registries.BLOCK, id, blockFunction.apply(blockSettings));
-        Registry.register(Registries.ITEM, id, itemFunction.apply(block, itemSettings));
+        Block block = Registry.register(Registries.BLOCK, id, new PillarBlock(AbstractBlock.Settings.create()
+                .mapColor(mapColor)
+                .strength(0.3F)
+                .luminance(blockState -> 15)
+                .sounds(BlockSoundGroup.FROGLIGHT)
+        ));
+        Registry.register(Registries.ITEM, id, new BlockItem(block, new Item.Settings()));
         return block;
     }
 

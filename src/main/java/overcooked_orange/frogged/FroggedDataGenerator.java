@@ -14,7 +14,6 @@ public class FroggedDataGenerator implements DataGeneratorEntrypoint {
         generator.addProvider(ModFrogTags::new);
         generator.addProvider(ModBiomeTags::new);
         generator.addProvider(FroggedModelProvider::new);
-
         generator.addProvider(FroggedEnglishProvider::new);
     }
 

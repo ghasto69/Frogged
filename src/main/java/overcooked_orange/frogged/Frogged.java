@@ -1,11 +1,9 @@
 package overcooked_orange.frogged;
 
 import net.fabricmc.api.ModInitializer;
-
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.event.player.AttackEntityCallback;
 import net.fabricmc.fabric.api.loot.v2.LootTableEvents;
-import net.fabricmc.fabric.api.tag.convention.v1.ConventionalBiomeTags;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnGroup;
 import net.minecraft.util.Identifier;
@@ -20,6 +18,8 @@ import overcooked_orange.frogged.registry.ModItems;
 
 public class Frogged implements ModInitializer {
     public static final String MOD_ID = "frogged";
+
+    @SuppressWarnings("unused")
     public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
     @Override

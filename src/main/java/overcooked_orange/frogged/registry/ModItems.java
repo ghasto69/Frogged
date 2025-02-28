@@ -16,11 +16,11 @@ import overcooked_orange.frogged.Frogged;
 import java.util.function.Function;
 
 public class ModItems {
-    public static final Item COBALT_FROGLIGHT = item("cobalt_froglight", settings -> new BlockItem(ModBlocks.COBALT_FROGLIGHT, settings), new Item.Settings());
-    public static final Item SAFFRON_FROGLIGHT = item("saffron_froglight", settings -> new BlockItem(ModBlocks.SAFFRON_FROGLIGHT, settings), new Item.Settings());
-    public static final Item RUSSET_FROGLIGHT = item("russet_froglight", settings -> new BlockItem(ModBlocks.RUSSET_FROGLIGHT, settings), new Item.Settings());
-    public static final Item CERULEAN_FROGLIGHT = item("cerulean_froglight", settings -> new BlockItem(ModBlocks.CERULEAN_FROGLIGHT, settings), new Item.Settings());
-    public static final Item SCULK_FROGLIGHT = item("sculk_froglight", settings -> new BlockItem(ModBlocks.SCULK_FROGLIGHT, settings), new Item.Settings());
+    public static final Item COBALT_FROGLIGHT = item("cobalt_froglight", settings -> new BlockItem(ModBlocks.COBALT_FROGLIGHT, settings), new Item.Settings().useBlockPrefixedTranslationKey());
+    public static final Item SAFFRON_FROGLIGHT = item("saffron_froglight", settings -> new BlockItem(ModBlocks.SAFFRON_FROGLIGHT, settings), new Item.Settings().useBlockPrefixedTranslationKey());
+    public static final Item RUSSET_FROGLIGHT = item("russet_froglight", settings -> new BlockItem(ModBlocks.RUSSET_FROGLIGHT, settings), new Item.Settings().useBlockPrefixedTranslationKey());
+    public static final Item CERULEAN_FROGLIGHT = item("cerulean_froglight", settings -> new BlockItem(ModBlocks.CERULEAN_FROGLIGHT, settings), new Item.Settings().useBlockPrefixedTranslationKey());
+    public static final Item SCULK_FROGLIGHT = item("sculk_froglight", settings -> new BlockItem(ModBlocks.SCULK_FROGLIGHT, settings), new Item.Settings().useBlockPrefixedTranslationKey());
 
     public static void registerItems() {
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.NATURAL).register(ModItems::addFroglight);

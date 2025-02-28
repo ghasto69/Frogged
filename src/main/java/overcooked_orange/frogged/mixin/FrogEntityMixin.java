@@ -36,14 +36,15 @@ public abstract class FrogEntityMixin extends AnimalEntity {
         RegistryEntry<Biome> biome = world.getBiome(this.getBlockPos());
         if (biome.isIn(ModBiomeTags.HAS_POISON_DART_FROGS)) {
             this.setVariant(switch (world.getRandom().nextInt(3)) {
-                case 0 -> ModFrogs.GOLDEN_POISON_DART_FROG;
-                case 1 -> ModFrogs.BLUE_POISON_DART_FROG;
-                case 2 -> ModFrogs.VARIEGATED_POISON_DART_FROG;
-                default -> ModFrogs.GOLDEN_POISON_DART_FROG; //Fallback
+                case 0 -> ModFrogs.GOLDEN_POISON_DART_FROG.value();
+                case 1 -> ModFrogs.BLUE_POISON_DART_FROG.value();
+                case 2 -> ModFrogs.VARIEGATED_POISON_DART_FROG.value();
+                default -> ModFrogs.GOLDEN_POISON_DART_FROG.value(); //Fallback
             });
-        }
-        if(biome.isIn(ModBiomeTags.HAS_SANDY_FROGS)) {
-            this.setVariant(ModFrogs.SANDY_FROG);
+        } else if (biome.isIn(ModBiomeTags.HAS_SANDY_FROGS)) {
+            this.setVariant(ModFrogs.SANDY_FROG.value());
+        } else if (biome.isIn(ModBiomeTags.HAS_SCULK_FROGS)) {
+            this.setVariant(ModFrogs.SCULK_FROG.value());
         }
     }
 }

@@ -3,6 +3,7 @@ package overcooked_orange.frogged;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.event.player.AttackEntityCallback;
+import net.fabricmc.fabric.api.event.player.UseEntityCallback;
 import net.fabricmc.fabric.api.loot.v2.LootTableEvents;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnGroup;
@@ -12,6 +13,7 @@ import org.slf4j.LoggerFactory;
 import overcooked_orange.frogged.datagen.ModBiomeTags;
 import overcooked_orange.frogged.frog.FrogEatingLootTableHandler;
 import overcooked_orange.frogged.frog.VenomousFrogAttackHandler;
+import overcooked_orange.frogged.frog.VenomousFrogPoisonPotionHandler;
 import overcooked_orange.frogged.registry.ModBlocks;
 import overcooked_orange.frogged.registry.ModFrogs;
 import overcooked_orange.frogged.registry.ModItems;
@@ -25,8 +27,8 @@ public class Frogged implements ModInitializer {
     @Override
     public void onInitialize() {
         ModFrogs.registerFrogs();
-        ModItems.registerItems();
         ModBlocks.registerBlocks();
+        ModItems.registerItems();
 
         BiomeModifications.addSpawn(
                 context -> context.hasTag(ModBiomeTags.SPAWNS_POISON_DART_FROGS),
@@ -48,6 +50,7 @@ public class Frogged implements ModInitializer {
 
         AttackEntityCallback.EVENT.register(new VenomousFrogAttackHandler());
         LootTableEvents.MODIFY.register(new FrogEatingLootTableHandler());
+        UseEntityCallback.EVENT.register(new VenomousFrogPoisonPotionHandler());
     }
 
     public static Identifier id(String path) {

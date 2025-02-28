@@ -15,6 +15,7 @@ import net.minecraft.loot.provider.number.ConstantLootNumberProvider;
 import net.minecraft.predicate.entity.DamageSourcePredicate;
 import net.minecraft.predicate.entity.EntityPredicate;
 import net.minecraft.predicate.entity.TypeSpecificPredicate;
+import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.resource.ResourceManager;
 import net.minecraft.util.Identifier;
 import overcooked_orange.frogged.registry.ModBlocks;
@@ -28,10 +29,11 @@ public class FrogEatingLootTableHandler implements LootTableEvents.Modify {
             froglight(ModBlocks.SAFFRON_FROGLIGHT, ModFrogs.GOLDEN_POISON_DART_FROG, builder);
             froglight(ModBlocks.CERULEAN_FROGLIGHT, ModFrogs.VARIEGATED_POISON_DART_FROG, builder);
             froglight(ModBlocks.RUSSET_FROGLIGHT, ModFrogs.SANDY_FROG, builder);
+            froglight(ModBlocks.SCULK_FROGLIGHT, ModFrogs.SCULK_FROG, builder);
         }
     }
 
-    private static void froglight(ItemConvertible item, FrogVariant variant, LootTable.Builder builder) {
+    private static void froglight(ItemConvertible item, RegistryEntry<FrogVariant> variant, LootTable.Builder builder) {
         LootPool.Builder pool = LootPool
                 .builder()
                 .with(ItemEntry.builder(item)
@@ -43,7 +45,7 @@ public class FrogEatingLootTableHandler implements LootTableEvents.Modify {
                                         DamageSourcePredicate.Builder
                                                 .create()
                                                 .sourceEntity(
-                                                        EntityPredicate.Builder.create().type(EntityType.FROG).typeSpecific(TypeSpecificPredicate.frog(variant))
+                                                        EntityPredicate.Builder.create().type(EntityType.FROG).typeSpecific(TypeSpecificPredicate.frog(variant.value()))
                                                 )
                                 )
                         )

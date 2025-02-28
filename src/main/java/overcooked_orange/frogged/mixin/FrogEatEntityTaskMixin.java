@@ -23,7 +23,11 @@ public abstract class FrogEatEntityTaskMixin {
             at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/passive/FrogEntity;isValidFrogFood(Lnet/minecraft/entity/LivingEntity;)Z")
     )
     private boolean mevCheckExtraStartConditions(boolean original, ServerWorld serverWorld, FrogEntity frog, @Local LivingEntity livingEntity) {
-        return (Registries.FROG_VARIANT.getEntry(frog.getVariant()).isIn(ModFrogTags.VENOMOUS) && livingEntity instanceof PlayerEntity player && player.getHealth() > 1) || original;
+        return (
+                Registries.FROG_VARIANT.getEntry(frog.getVariant()).isIn(ModFrogTags.VENOMOUS) &&
+                livingEntity instanceof PlayerEntity player &&
+                player.getHealth() > 1
+        ) || original;
     }
 
     @Inject(

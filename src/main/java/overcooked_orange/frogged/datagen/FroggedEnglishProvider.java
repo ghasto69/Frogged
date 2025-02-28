@@ -15,5 +15,6 @@ public class FroggedEnglishProvider extends FabricLanguageProvider {
         translations.add(ModBlocks.SAFFRON_FROGLIGHT, "Saffron Froglight");
         translations.add(ModBlocks.CERULEAN_FROGLIGHT, "Cerulean Froglight");
         translations.add(ModBlocks.RUSSET_FROGLIGHT, "Russet Froglight");
+        translations.add(ModBlocks.SCULK_FROGLIGHT, "Sculk Froglight");
     }
 }

@@ -2,7 +2,7 @@ package overcooked_orange.frogged.datagen;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
-import net.fabricmc.fabric.api.tag.convention.v1.ConventionalBiomeTags;
+import net.fabricmc.fabric.api.tag.convention.v2.ConventionalBiomeTags;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.tag.TagKey;
@@ -28,16 +28,16 @@ public class ModBiomeTags extends FabricTagProvider<Biome> {
     @Override
     protected void configure(RegistryWrapper.WrapperLookup wrapperLookup) {
         getOrCreateTagBuilder(SPAWNS_POISON_DART_FROGS)
-                .forceAddTag(ConventionalBiomeTags.JUNGLE);
+                .forceAddTag(ConventionalBiomeTags.IS_JUNGLE);
         getOrCreateTagBuilder(SPAWNS_SANDY_FROGS)
-                .forceAddTag(ConventionalBiomeTags.BEACH);
+                .forceAddTag(ConventionalBiomeTags.IS_BEACH);
         getOrCreateTagBuilder(SPAWNS_SCULK_FROGS);
 
         getOrCreateTagBuilder(HAS_POISON_DART_FROGS)
                 .forceAddTag(SPAWNS_POISON_DART_FROGS);
         getOrCreateTagBuilder(HAS_SANDY_FROGS)
-                .forceAddTag(ConventionalBiomeTags.DESERT)
-                .forceAddTag(ConventionalBiomeTags.BADLANDS)
+                .forceAddTag(ConventionalBiomeTags.IS_DESERT)
+                .forceAddTag(ConventionalBiomeTags.IS_BADLANDS)
                 .forceAddTag(SPAWNS_SANDY_FROGS);
         getOrCreateTagBuilder(HAS_SCULK_FROGS)
                 .add(BiomeKeys.DEEP_DARK);

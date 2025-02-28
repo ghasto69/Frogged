@@ -3,6 +3,8 @@ package overcooked_orange.frogged.registry;
 import net.minecraft.block.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
+import net.minecraft.registry.RegistryKey;
+import net.minecraft.registry.RegistryKeys;
 import net.minecraft.util.Identifier;
 import overcooked_orange.frogged.Frogged;
 
@@ -21,6 +23,6 @@ public class ModBlocks {
 
     private static Block block(String name, Function<AbstractBlock.Settings, Block> blockFunction, AbstractBlock.Settings settings) {
         Identifier id = Frogged.id(name);
-        return Registry.register(Registries.BLOCK, id, blockFunction.apply(settings));
+        return Registry.register(Registries.BLOCK, id, blockFunction.apply(settings.registryKey(RegistryKey.of(RegistryKeys.BLOCK, id))));
     }
 }

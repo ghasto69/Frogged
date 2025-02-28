@@ -8,6 +8,8 @@ import net.minecraft.item.ItemGroups;
 import net.minecraft.item.Items;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
+import net.minecraft.registry.RegistryKey;
+import net.minecraft.registry.RegistryKeys;
 import net.minecraft.util.Identifier;
 import overcooked_orange.frogged.Frogged;
 
@@ -27,7 +29,7 @@ public class ModItems {
 
     private static Item item(String name, Function<Item.Settings, Item> itemFunction, Item.Settings settings) {
         Identifier id = Frogged.id(name);
-        return Registry.register(Registries.ITEM, id, itemFunction.apply(settings));
+        return Registry.register(Registries.ITEM, id, itemFunction.apply(settings.registryKey(RegistryKey.of(RegistryKeys.ITEM, id))));
     }
 
     private static void addFroglight(FabricItemGroupEntries entries) {

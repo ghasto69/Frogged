@@ -1,5 +1,5 @@
-// 1.20.1	2025-02-28T13:40:20.119844	Frogged/Block Loot Tables
-c579dde2a68e3ba2e7d24c0d29437b821b1890ec data/frogged/loot_tables/blocks/saffron_froglight.json
-aedff72c7b37ddc54d428c91cf3c48ef2f1cc672 data/frogged/loot_tables/blocks/cobalt_froglight.json
-15b6ed18e468b51a7c78b0a6748734fb3fecf92d data/frogged/loot_tables/blocks/russet_froglight.json
-315a054f1ce1d286d626af4e443a57bb655b2834 data/frogged/loot_tables/blocks/cerulean_froglight.json
+// 1.21.4	-999999999-01-01T00:00:00	Frogged/Block Loot Tables
+315a054f1ce1d286d626af4e443a57bb655b2834 data/frogged/loot_table/blocks/cerulean_froglight.json
+aedff72c7b37ddc54d428c91cf3c48ef2f1cc672 data/frogged/loot_table/blocks/cobalt_froglight.json
+15b6ed18e468b51a7c78b0a6748734fb3fecf92d data/frogged/loot_table/blocks/russet_froglight.json
+c579dde2a68e3ba2e7d24c0d29437b821b1890ec data/frogged/loot_table/blocks/saffron_froglight.json

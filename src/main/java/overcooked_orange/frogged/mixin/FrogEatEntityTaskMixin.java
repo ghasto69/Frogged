@@ -8,7 +8,6 @@ import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.passive.FrogEntity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.registry.Registries;
 import net.minecraft.server.world.ServerWorld;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -24,7 +23,7 @@ public abstract class FrogEatEntityTaskMixin {
     )
     private boolean mevCheckExtraStartConditions(boolean original, ServerWorld serverWorld, FrogEntity frog, @Local LivingEntity livingEntity) {
         return (
-                Registries.FROG_VARIANT.getEntry(frog.getVariant()).isIn(ModFrogTags.VENOMOUS) &&
+                frog.getVariant().isIn(ModFrogTags.VENOMOUS) &&
                 livingEntity instanceof PlayerEntity player &&
                 player.getHealth() > 1
         ) || original;
@@ -36,7 +35,7 @@ public abstract class FrogEatEntityTaskMixin {
             cancellable = true
     )
     private void poisonPlayer(ServerWorld serverWorld, FrogEntity frog, CallbackInfo callbackInfo) {
-        if (Registries.FROG_VARIANT.getEntry(frog.getVariant()).isIn(ModFrogTags.VENOMOUS)) {
+        if (frog.getVariant().isIn(ModFrogTags.VENOMOUS)) {
             frog.getFrogTarget().ifPresent(entity -> {
                 if (entity instanceof PlayerEntity player && player.isAlive()) {
                     player.addStatusEffect(new StatusEffectInstance(StatusEffects.POISON, 300, 1));

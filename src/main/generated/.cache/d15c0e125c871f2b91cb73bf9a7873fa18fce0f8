@@ -1,7 +1,7 @@
-// 1.20.1	2025-02-28T13:40:20.117556	Frogged/Tags for minecraft:worldgen/biome
-634b39053d41a5bbf42b6586d5fb01346d6959fe data/frogged/tags/worldgen/biome/has_sandy_frogs.json
-e1020eb7a2794cdecef221185e7270126c623b25 data/frogged/tags/worldgen/biome/spawns_poison_dart_frogs.json
-eade5ce566826922e1feae327962325688357f08 data/frogged/tags/worldgen/biome/spawns_sandy_frogs.json
-881f0b38ec344f49a627d3eacbb93cad2ad9ca58 data/frogged/tags/worldgen/biome/has_poison_dart_frogs.json
-8a23702b05296c8af5014d6aa6e9265ded85c7d9 data/frogged/tags/worldgen/biome/spawns_sculk_frogs.json
-61f9daa79f2fb75681c2c5e5fb89e2fbba9e2cc9 data/frogged/tags/worldgen/biome/has_sculk_frogs.json
+// 1.21.4	-999999999-01-01T00:00:00	Frogged/Tags for minecraft:worldgen/biome
+e978f222cab033d26553a3a5580a0a1f6f5fb4bc data/frogged/tags/worldgen/biome/has_poison_dart_frogs.json
+d14794dca83eb22a81a27db27740803d274b1016 data/frogged/tags/worldgen/biome/has_sandy_frogs.json
+45e2314b6fbf2e847bd70c163e678e0e756a1640 data/frogged/tags/worldgen/biome/has_sculk_frogs.json
+1d55208258c7814c4d08871f414fc4881a47600d data/frogged/tags/worldgen/biome/spawns_poison_dart_frogs.json
+5c2acf45e6afffe521d282bdef4ba51a0316ae28 data/frogged/tags/worldgen/biome/spawns_sandy_frogs.json
+35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/frogged/tags/worldgen/biome/spawns_sculk_frogs.json
